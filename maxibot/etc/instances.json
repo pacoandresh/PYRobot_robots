@@ -1,0 +1,55 @@
+{
+  "temperatura1":{"_COMP":"developing/temp_sensor",
+                  "_PUB":"temp",
+                  "pintriger":10,
+                  "pinecho":11
+                 },
+
+  "temperatura2":{"_COMP":"developing/temp_sensor",
+                  "_INTERFACES":["temp_interface"],
+                  "_PUB":"temp",
+                  "pintriger":12,
+                  "pinecho":13
+                 },
+
+  "MYgps"         :{"_COMP":"developing/gps",
+                  "_INTERFACES":"gps_drive",
+                  "_PUB":["X","Y","Z"],
+                  "_SUB":["temp=temperatura1/temp",
+                           "mi=BaseM/mi",
+                           "md=BaseM/md"
+                          ],
+                  "_PUB_EVENTS":"gps",
+                  "_SUB_EVENTS":"base_event=BaseM/basemotion"
+                },
+"BaseM":        {"_COMP":"developing/base::base",
+                 "_INTERFACES":["basemotion_interface"],
+                 "_PUB":["mi","md"],
+                 "_PUB_EVENTS":["basemotion"],
+                 "_REQ":"gps=MYgps/gps_drive"
+                },
+"Baseb":        {"_COMP":"local/base_broad::base_broad",
+                 "_INTERFACES":["basemotion_interface"],
+                 "_EMIT":["mi","md"],
+                 "_EMIT_EVENTS":["basemotion"]
+                },
+
+"MYgpsb"         :{"_COMP":"local/gps_broad::gps",
+                  "_INTERFACES":"gps_drive",
+                  "_EMIT":["X","Y","Z"],
+                  "_RECEIVE":["mi=Baseb/mi",
+                              "md=Baseb/md"
+                             ],
+                  "_EMIT_EVENTS":"gps",
+                  "_RECEIVE_EVENTS":"base_event=Baseb/basemotion"
+                                              },
+
+  "camara_frontal":{"_COMP":"camera::usbcam",
+                    "_INTERFACES":["camera"],
+                    "socket_port":11000,
+                    "idcam":0,
+                    "width":320,
+                    "height":200,
+                    "framerate":24
+                   }
+}

@@ -1,0 +1,20 @@
+{
+"explorerhat":{"_COMP":"developing/explorerhat::explorerhat",
+                 "_INTERFACES":["basemotion","inputPins_interface","light_interface"],
+                 "_PUB":["mi","md","analog","analog_raw","input"],
+                 "_PUB_EVENTS":["basemotion"],
+                 "logging_level":50,
+                 "Radiowheels":67
+                },
+"vl6180x":{"_COMP":"developing/vl6180x::vl6180x",
+                    "_PUB":["distance"]
+                   },
+"camara_frontal":{"_COMP":"camera::picam",
+                    "_INTERFACES":["camera"],
+                    "socket_port":11000,
+                    "idcam":0,
+                    "width":320,
+                    "height":200,
+                    "framerate":24
+                   }
+}
