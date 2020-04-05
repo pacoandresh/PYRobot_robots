@@ -45,7 +45,7 @@
                   "_RECEIVE_EVENTS":"base_event=Baseb/basemotion"
                                               },
 
-  "camara_frontal":{"_COMP":"camera::usbcam",
+  "camara_frontal":{"_COMP":"camera::picam",
                     "_INTERFACES":["camera"],
                     "socket_port":11000,
                     "idcam":0,
