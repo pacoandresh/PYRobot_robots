@@ -4,7 +4,7 @@
 # ____________developed by paco andres____________________
 import time
 from PYRobot.libs import control
-from PYRobot.libs.proxy import Proxy
+
 import explorerhat as ep
 
 class explorerhat(control.Control):

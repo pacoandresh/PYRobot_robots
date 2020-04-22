@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # ____________developed by paco andres_15/04/2019___________________
-#from libs import utils
+
 import time
 from PYRobot.libs import control
 from io import BytesIO
 import struct
 import threading
 from PYRobot.libs import control
-import PYRobot.libs.utils as utils
+import PYRobot.utils.utils as utils
 import cv2
 from components.stable.camera.clientsocket import ClientSocket
 

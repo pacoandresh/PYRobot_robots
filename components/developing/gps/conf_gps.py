@@ -18,10 +18,6 @@ public_sync=True
 X=0.0
 Y=0.0
 Z=0.0
-temp=0.0
-mi=0
-md=0
-base_event=[]
 
 _REQUIRES_=[]
 _EVENTS_gps=[

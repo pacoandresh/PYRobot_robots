@@ -1,0 +1,6 @@
+{
+ "MODEL":"mybot",
+ "pcubuntu":["MYgps","BaseM","temperatura1","camara_frontal"]
+ #"peque":["temperatura1","temperatura2"],
+ #"localhost":["BaseM","MYgps"]   
+}

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# lock().acquire()
 # ____________developed by paco andres____________________
 # _________collaboration with cristian vazquez____________
 import time
 from PYRobot.libs import control
 from PYRobot.libs.proxy import Proxy
+import adafruit_vl6180x
 import board
 import busio
-import adafruit_vl6180x
+
 
 class vl6180x(control.Control):
 

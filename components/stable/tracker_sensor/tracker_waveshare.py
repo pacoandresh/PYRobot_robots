@@ -5,7 +5,7 @@
 # _________collaboration with cristian vazquez____________
 import time
 from PYRobot.libs import control
-from PYRobot.libs.proxy import Proxy
+
 import json
 import RPi.GPIO as GPIO
 #import RPi.GPIO as rpi_gpio

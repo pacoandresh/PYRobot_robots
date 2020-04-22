@@ -1,0 +1,33 @@
+{
+  "INIT":{"LOCAL":["explorerhat","vl6180x","camara_frontal"]},
+  "GENERAL":{"ethernet":"enp0s25",
+             "sys":false,
+             "port":7060,
+             "broadcast_port":9999,
+             "MQTT_port"  :1883,
+             "EMIT_port"   :10000,
+             "mode":"public",
+             "KEY":"user:pass",
+             "logging_level":50,
+             "frec":0.02
+            },
+    
+  "explorerhat":{"_COMP":"developing/explorerhat::explorerhat",
+                   "_INTERFACES":["basemotion","inputPins_interface","light_interface"],
+                   "_PUB":["mi","md","analog","analog_raw","input"],
+                   "_PUB_EVENTS":["basemotion"],
+                   "logging_level":50,
+                   "Radiowheels":67
+                  },
+  "vl6180x":{"_COMP":"developing/vl6180x::vl6180x",
+                      "_PUB":["distance"]
+                     },
+  "camara_frontal":{"_COMP":"camera::picam",
+                      "_INTERFACES":["camera"],
+                      "socket_port":11000,
+                      "idcam":0,
+                      "width":320,
+                      "height":200,
+                      "framerate":24
+                     }
+  }
