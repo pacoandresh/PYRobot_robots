@@ -28,5 +28,6 @@ MQTT_port=1883
 EMIT_port=10000
 mode="public"
 KEY="user:pass"
+pepe=[]
 
 

@@ -18,7 +18,7 @@ class node(control.Control):
     def __Run__(self):
         
         self.start_worker(self.worker_reader, )
-        pprint(self.__dict__)
+        #pprint(self.__dict__)
 
     def __Close__(self):
         self.worker_run=False
@@ -35,4 +35,4 @@ class node(control.Control):
     def Get_Interfaces(self,interfaces):
         pass
     def Get_config(self,components):
-        pass
+        print(components)

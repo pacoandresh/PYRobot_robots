@@ -4,7 +4,7 @@ from gevent import Timeout
 import time
 import json
 
-def Get_Host(port=9999,key="hi PYROBOT"):
+def Get_Host(port=9998,key="PYRobot/HI::get"):
     host = '255.255.255.255'
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     client.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
