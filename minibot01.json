@@ -1,0 +1,6 @@
+{
+ "MODEL":"minibot",
+ "pcubuntu":["joystick"],
+ "maxibot01":["base","vl6180x"]
+  
+}

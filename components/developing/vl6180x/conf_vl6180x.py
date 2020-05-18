@@ -4,6 +4,5 @@
 from PYRobot.libs.interfaces import Service
 
 frec=0.05
-public_sync=True
 distance=0
 

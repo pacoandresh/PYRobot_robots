@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # ____________developed by paco andres_15/04/2019___________________
 
-frec=0.3
-public_sync=False
+frec=0.1
 mi=0.0
 md=0.0
 _mi=None

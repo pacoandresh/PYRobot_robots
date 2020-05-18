@@ -27,8 +27,7 @@ class light_interface(Service):
     def set_light(self,color,status):
         pass
 
-frec=0.005
-public_sync=True
+frec=0.2
 mi=0.0
 md=0.0
 analog=[0,0,0,0]

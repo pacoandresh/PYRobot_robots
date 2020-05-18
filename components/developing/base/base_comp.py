@@ -12,33 +12,33 @@ import random
 class base(control.Control):
 
     def __init__(self):
+        self.butt=[]
+        self.jx=0
+        self.jy=0
+        self.Define_Topics("mi","md")
         self.mi=0.0
         self.md=0.0
 
 
     def __Run__(self):
-        self.basemotion=[]
         self.set(0,0)
-        #self.start_worker(self.worker_reader, )
+        self.start_worker(self.worker_reader, )
+        
 
     def __Close__(self):
         self.set(0,0)
 
     def worker_reader(self):
-
         while self.worker_run:
-
-            self.mi=self.mi+1
-            self.md=self.md+0.5
-            if self.mi-self.md==50:
-                self.mi,self.md=self.md,self.mi
+            self.L_info("X={},Y={},Z={} ,BUTT={}".format(self.X,self.Y,self.Z,self.BUTTONS))
             time.sleep(0.05)
 
     def get(self):
-        return mi,md
+        return self.mi,self.md
 
     def set(self,mi,md):
-        self.mi=mi
-        self.md=md
+        self.mi_PUB(mi)
+        self.md_PUB(md)
         self.L_info("Base new velocity:{}-{}".format(self.md,self.mi))
-        self._PROC["PUB"].Public()
+    
+

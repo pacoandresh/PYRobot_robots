@@ -8,7 +8,7 @@ import netifaces as ni
 import socket
 import json
 
-broadcast=":9998"
+broadcast="9000"
 
 def get_all_ip_eths():
     address = []
@@ -32,12 +32,14 @@ class iamrobot(DatagramServer):
 
     def handle(self, data, address): # pylint:disable=method-hidden
         key=data.decode()
-        if key=="PYRobot/HI::get":
+        sender,key=key.split("::")
+        robot,_,query=key.split("/")
+        if robot=="iamrobot" and query=="HI":
             host=get_host_name()
-            payload={}
-            payload[host]=get_all_ip_eths()
+            data={}
+            data[host]=get_all_ip_eths()
+            payload=[data,"HI","iamrobot"]
             payload=json.dumps(payload)
-            #print(payload)
             self.socket.sendto(payload.encode(), address)
 
 

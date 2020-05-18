@@ -8,9 +8,10 @@ frec=0.04
 public_sync=False
 mi=0.0
 md=0.0
+jz=0
+eventjs=[]
 
 
-_REQUIRES_=["gps"]
 _EVENTS_basemotion=[
     "Stop::self.mi==0 and self.md==0",
     "Max::self.mi>255 and self.md>255",

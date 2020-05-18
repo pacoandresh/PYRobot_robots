@@ -1,33 +1,46 @@
 {
-"INIT":{"LOCAL":["explorerhat","vl6180x","camara_frontal"]},
 "GENERAL":{"ethernet":"enp0s25",
            "sys":false,
            "port":7060,
-           "broadcast_port":9999,
+           "BROADCAST_port":9999,
+           "DISCOVERY_port":9000,
            "MQTT_port"  :1883,
-           "EMIT_port"   :10000,
+           "MQTT_uri":"pcubuntu",
+           "MULTICAST_port":10000,
            "mode":"public",
            "KEY":"user:pass",
            "logging_level":50,
            "frec":0.02
           },
+"base":{"_COMP":"developing/base::base",
+        "_INTERFACES":["basemotion"],
+        "_TOPICS":["MQ::mi","MQ::md"],
+        "_SUS":["X=joystick/ABS_X","Y=joystick/ABS_Y","Z=joystick/ABS_Z","BUTTONS=joystick/BUTTONS"]
+        },
   
 "explorerhat":{"_COMP":"developing/explorerhat::explorerhat",
-                 "_INTERFACES":["basemotion","inputPins_interface","light_interface"],
-                 "_PUB":["mi","md","analog","analog_raw","input"],
-                 "_PUB_EVENTS":["basemotion"],
-                 "logging_level":50,
+                 "_INTERFACES":["basemotion"],
+                 "_TOPICS":["MQ::mi","MQ::md","MQ::analog","MQ::analog_raw"],
+                 #"_EVENTS":["MQ::basemotion"],
+                 "_SUS":["X=joystick/ABS_X","Y=joystick/ABS_Y"],
                  "Radiowheels":67
                 },
 "vl6180x":{"_COMP":"developing/vl6180x::vl6180x",
-                    "_PUB":["distance"]
+                    "_TOPICS":["MQ::distance"]
                    },
-"camara_frontal":{"_COMP":"camera::picam",
+"camara_frontal":{"_COMP":"stable/camera::picam",
                     "_INTERFACES":["camera"],
                     "socket_port":11000,
                     "idcam":0,
                     "width":320,
                     "height":200,
                     "framerate":24
+                   },
+"joystick":{"_COMP":"developing/inputdev::inputdev",
+                    "devname":"Logitech Logitech Attack 3",
+                    #"devname":"Sony PLAYSTATION(R)3 Controller",
+                    "_TOPICS":["MQ::ABS_X","MQ::ABS_Y","MQ::ABS_Z","MQ::BUTTONS"],
+                    "_EVENTS":["MQ::joystick"]
                    }
 }
+

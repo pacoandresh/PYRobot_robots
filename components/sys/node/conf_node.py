@@ -3,24 +3,23 @@
 
 from PYRobot.libs.interfaces import Service
 
-class node_interface(Service):
+class Node_Interface(Service):
     
-    def Run_comp(self,component_name):
-        pass
-    def Stop_comp(self,component_name):
+    def Run_comp(self,comp):
         pass
     def Get_Interfaces(self,interfaces):
         pass
-    def Get_config(self,components):
+    def Get_config(self,host,components):
         pass
 
-_INTERFACES="node_interface"
+_INTERFACES="Node_Interface"
 NODE="localhost"
 robot="PYRobot"
 name="node"      
 frec=0.01
 public_sync=False
 ethernet="enp0s25"
+logging_level=50
 sys=True
 port=8060
 broadcast_port=9999

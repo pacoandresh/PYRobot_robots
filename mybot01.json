@@ -1,6 +1,6 @@
 {
  "MODEL":"mybot",
- "localhost":["MYgps","BaseM","temperatura1"]
- #"maxibot01":["temperatura1","temperatura2"]
+ "localhost":["MYgps","BaseM","temperatura1"],
+ "maxibot01":["Baseb","temperatura2"]
   
 }
